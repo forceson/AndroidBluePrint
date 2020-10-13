@@ -1,6 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
     <string name="app_name">BluePrint</string>
-    <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_home">Home</string>
     <string name="title_notifications">Notifications</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_dashboard_fragment">Hello dashboard fragment</string>
+    <string name="hello_favorite_fragment">Hello favorite fragment</string>
+    <string name="hello_home_fragment">Hello home fragment</string>
 </resources>
