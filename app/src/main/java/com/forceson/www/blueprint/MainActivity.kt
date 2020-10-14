@@ -3,6 +3,9 @@ package com.forceson.www.blueprint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import com.forceson.www.blueprint.dashboard.ui.DashboardFragment
+import com.forceson.www.blueprint.favorite.ui.FavoriteFragment
+import com.forceson.www.blueprint.home.ui.HomeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

@@ -1,17 +1,19 @@
-package com.forceson.www.blueprint
+package com.forceson.www.blueprint.dashboard.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.forceson.www.blueprint.R
+import com.forceson.www.blueprint.dashboard.DashboardContract
 
 /**
  * A simple [Fragment] subclass.
  * Use the [DashboardFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class DashboardFragment : Fragment() {
+class DashboardFragment : Fragment(), DashboardContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
