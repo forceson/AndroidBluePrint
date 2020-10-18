@@ -8,6 +8,7 @@ import com.forceson.www.blueprint.favorite.ui.FavoriteFragment
 import com.forceson.www.blueprint.home.ui.HomeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
+// TODO: Lazy Loading
 class MainActivity : AppCompatActivity() {
     private var pagerAdapter: SectionsPagerAdapter? = null
 
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         pagerAdapter = SectionsPagerAdapter(this)
         with(viewPager) {
             offscreenPageLimit = 3
+            isUserInputEnabled = false
             adapter = pagerAdapter?.apply {
                 addFragment(getString(R.string.title_home), HomeFragment.newInstance())
                 addFragment(getString(R.string.title_dashboard), DashboardFragment.newInstance())
@@ -39,15 +41,15 @@ class MainActivity : AppCompatActivity() {
     private fun navigateToFragment(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.home -> {
-                viewPager.currentItem = 0
+                viewPager.setCurrentItem(0, false)
                 true
             }
             R.id.dashboard -> {
-                viewPager.currentItem = 1
+                viewPager.setCurrentItem(1, false)
                 true
             }
             R.id.favorite -> {
-                viewPager.currentItem = 2
+                viewPager.setCurrentItem(2, false)
                 true
             }
             else -> false
