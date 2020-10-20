@@ -1,9 +1,11 @@
 package com.forceson.www.blueprint.data
 
+import com.google.gson.annotations.Expose
+
 data class Label(
-    val id: Long,
-    val name: String,
-    val color: String,
-    val default: Boolean,
-    val description: String?
+    @Expose val id: Long,
+    @Expose val name: String,
+    @Expose val color: String,
+    @Expose val default: Boolean,
+    @Expose val description: String?
 )

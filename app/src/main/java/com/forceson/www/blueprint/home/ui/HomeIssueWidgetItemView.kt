@@ -26,7 +26,7 @@ class HomeIssueWidgetItemView @JvmOverloads constructor(
             ContextCompat.getColorStateList(context, R.color.colorOpen)
         } else ContextCompat.getColorStateList(context, R.color.colorClose)
         titleTxt.text = issue.title
-        userAvatarImg.setImageURI(Uri.parse(issue.user.avatarUrl))
+        issue.user.avatarUrl?.let { userAvatarImg.setImageURI(Uri.parse(it)) }
         usernameTxt.text = issue.user.name
         commentCntTxt.text = issue.comments.toString()
     }

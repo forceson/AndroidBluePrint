@@ -1,14 +1,17 @@
 package com.forceson.www.blueprint.data
 
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
+
 data class Repo(
-    val id: Long,
-    val name: String,
-    val fullName: String,
-    val owner: User,
-    val description: String?,
-    val fork: Boolean,
-    val stargazersCount: Int,
-    val watchersCount: Int,
-    val forksCount: Int,
-    val language: String
+    @Expose val id: Long,
+    @Expose val name: String,
+    @Expose @SerializedName("full_name") val fullName: String,
+    @Expose val owner: User,
+    @Expose val description: String?,
+    @Expose val fork: Boolean,
+    @Expose @SerializedName("stargazers_count") val stargazersCount: Int,
+    @Expose @SerializedName("watchers_count") val watchersCount: Int,
+    @Expose @SerializedName("forks_count") val forksCount: Int,
+    @Expose val language: String
 )

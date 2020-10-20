@@ -22,7 +22,7 @@ class HomeRepoWidgetItemView @JvmOverloads constructor(
 
     fun setData(repo: Repo) {
         titleTxt.text = repo.name
-        userAvatarImg.setImageURI(Uri.parse(repo.owner.avatarUrl))
+        repo.owner.avatarUrl?.let { userAvatarImg.setImageURI(Uri.parse(it)) }
         usernameTxt.text = repo.owner.name
         stargazersCntTxt.text = "Stargazers\n${repo.stargazersCount}"
         watchersCntTxt.text = "Watchers\n${repo.watchersCount}"

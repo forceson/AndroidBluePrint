@@ -1,12 +1,14 @@
 package com.forceson.www.blueprint.data
 
+import com.google.gson.annotations.Expose
+
 data class Issue(
-    val id: Long,
-    val title: String,
-    val user: User,
-    val state: String,
-    val assignees: List<User>,
-    val labels: List<Label>,
-    val comments: Int,
-    val body: String?
+    @Expose val id: Long,
+    @Expose val title: String,
+    @Expose val user: User,
+    @Expose val state: String,
+    @Expose val assignees: List<User>,
+    @Expose val labels: List<Label>,
+    @Expose val comments: Int,
+    @Expose val body: String?
 )

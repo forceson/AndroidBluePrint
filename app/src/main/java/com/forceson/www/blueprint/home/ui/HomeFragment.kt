@@ -12,9 +12,6 @@ import com.forceson.www.blueprint.data.Issue
 import com.forceson.www.blueprint.data.Repo
 import com.forceson.www.blueprint.data.User
 import com.forceson.www.blueprint.home.HomeContract
-import com.forceson.www.blueprint.home.data.HomeIssueWidget
-import com.forceson.www.blueprint.home.data.HomeRepoWidget
-import com.forceson.www.blueprint.home.data.HomeUserWidget
 import com.forceson.www.blueprint.home.presenter.HomePresenter
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -66,7 +63,7 @@ class HomeFragment : Fragment(), HomeContract.View {
                 300,
                 "This!"
             )
-            setData(
+            /*setData(
                 listOf(
                     HomeUserWidget(arrayListOf(user, user, user, user, user)),
                     HomeRepoWidget(arrayListOf(repo, repo, repo, repo, repo)),
@@ -76,11 +73,26 @@ class HomeFragment : Fragment(), HomeContract.View {
                     HomeIssueWidget(arrayListOf(issue, issue, issue, issue)),
                     HomeUserWidget(arrayListOf(user, user, user, user, user)),
                 )
-            )
+            )*/
         }
-        presenter = HomePresenter()
+        presenter = HomePresenter(this)
+        presenter.onCreate()
         recyclerView.adapter = adapter
         recyclerView.addItemDecoration(DividerItemDecoration(context, LinearLayout.VISIBLE))
+    }
+
+    override fun updateData(data: List<Any>) {
+        adapter.setData(data)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        presenter.onResume()
+    }
+
+    override fun onDestroyView() {
+        presenter.onDestroy()
+        super.onDestroyView()
     }
 
     companion object {

@@ -17,12 +17,11 @@ class HomeUserWidgetItemView @JvmOverloads constructor(
 
     init {
         LayoutInflater.from(context).inflate(R.layout.home_user_widget_item_view, this, true)
-        layoutParams =
-            LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        layoutParams = LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
     }
 
     fun setData(user: User) {
-        userAvatarImg.setImageURI(Uri.parse(user.avatarUrl))
+        user.avatarUrl?.let { userAvatarImg.setImageURI(Uri.parse(it)) }
         usernameTxt.text = user.name
     }
 }
